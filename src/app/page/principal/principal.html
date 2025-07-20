@@ -5,7 +5,39 @@
   </div>
 
   <div class="botoes">
-    <button>Adicionar Credencial</button>
+    <button (click)="apresentarModal()">Adicionar Credencial</button>
   </div>
 
+</section>
+
+<!-- backdrop -->
+<div *ngIf="isApresentarModal" class="backdrop"></div>
+
+<!-- modal -->
+<section *ngIf="isApresentarModal" id="modal-cadastrar-credencial">
+  <div class="modal">
+    <div class="modal-header">
+      <p>Cadastrar Nova Credencial</p>
+    </div>
+    <div class="modal-content">
+      <!-- <ng-content></ng-content> -->
+      <form id="formulario">
+
+        <div class="form-input coluna10">
+          <label>Nome do Sistema <sup>*</sup></label>
+          <input type="text" placeholder="Informe o Nome do Sistema" />
+        </div>
+
+        <div class="form-input coluna90">
+          <label>Descrição <sup>*</sup></label>
+          <input type="text" placeholder="Informe uma Descrição" />
+        </div>
+
+      </form>
+    </div>
+    <div class="modal-footer">
+      <!-- Exemplo de botão -->
+      <button (click)="fecharModal()">Fechar</button>
+    </div>
+  </div>
 </section>
