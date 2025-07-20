@@ -1,0 +1,67 @@
+nav {
+  background: #031224;
+  color: #f1f3f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1rem 1rem 0.4rem;
+}
+
+nav .item-esquerda .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Michroma", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav .item-esquerda .logo i {
+  font-size: 1.7rem;
+}
+
+nav .item-centro .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav .item-centro .menu .active {
+  font-weight: bold;
+}
+
+nav .item-direita .user {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: #1e293b;
+  padding: 0.6rem;
+  border-radius: 50px;
+}
+
+nav .item-direita .user .imagem img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 3px silver;
+}
+
+nav .item-direita .user .informacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav .item-direita .user .informacao b {
+  font-size: 0.8rem;
+}
+
+nav .item-direita .user .icone-abrir i {
+  font-size: 1.3rem;
+  cursor: pointer;
+}

@@ -1,6 +1,25 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins.ttf");
+}
+
+@font-face {
+  font-family: "Michroma";
+  src: url("/fonts/Michroma.ttf");
+}
+
 @import "boxicons/css/boxicons.min.css";
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+}
+
+a {
+  cursor: pointer;
 }
