@@ -5,6 +5,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0.4rem 1rem 1rem 0.4rem;
+  border-bottom: solid 2px rgb(231, 231, 231);
 }
 
 nav .item-esquerda .logo {
@@ -26,6 +27,14 @@ nav .item-centro .menu {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+nav .item-centro .menu a {
+  transition: all 0.5s ease-in-out;
+}
+
+nav .item-centro .menu a:hover {
+  font-weight: bold;
 }
 
 nav .item-centro .menu .active {
