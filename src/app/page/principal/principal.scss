@@ -37,6 +37,54 @@
   z-index: 999;
 }
 
+#formulario {
+
+  .row {
+    // border: dashed 1px red;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .form-input {
+      display: flex;
+      flex-direction: column;
+      flex: 100;
+
+      label {
+        margin-bottom: 0.5rem;
+        font-size: 15px;
+        font-weight: bold;
+      }
+
+      input,
+      textarea {
+        height: 40px;
+        padding-left: 1rem;
+        font-size: 14px;
+        font-weight: bold;
+        color: #02234d;
+        border: 1px solid rgb(206, 206, 206);
+        border-radius: 10px;
+        outline: none;
+      }
+
+      input:focus {
+        border: 1px solid #969696;
+      }
+
+      textarea {
+        &.placeholder {
+          font-family: "Poppins", sans-serif;
+          color: #a0a0a0;
+          font-weight: normal;
+        }
+      }
+
+    }
+  }
+
+}
+
 #modal-cadastrar-credencial {
   position: fixed;
   top: 50%;
@@ -45,7 +93,7 @@
   background: white;
   border-radius: 8px;
   padding: 1.5rem;
-  width: 90%;
+  width: 70%;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
@@ -53,7 +101,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 
     .close-btn {
@@ -71,35 +119,32 @@
   .modal-footer {
     margin-top: 1rem;
     text-align: right;
-  }
-}
 
-#formulario {
+    .button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
 
-  .form-input {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    label {
-      display: block;
-      // border: solid red 2px;
-      font-weight: bold;
-      margin-bottom: 1rem;
-    }
-    input {
-      height: 50px;
-      outline: none;
-      border: none;
-      border: solid 1px rgb(206, 206, 206);
-      border-radius: 14px;
-      padding-left: 1rem;
-      font-size: 14px;
-      font-weight: bold;
-      color: #02234d;
-      margin-bottom: 1.5rem;
-    }
-    input:focus {
-      border: solid 1px #969696;
+      button {
+        height: 40px;
+        padding: 0.6rem;
+        border-radius: 14px;
+        font-size: 14px;
+      }
+
+      button:nth-child(1) {
+        background: #031224;
+        color: #f1f3f2;
+        font-weight: bold;
+        width: 90%;
+      }
+
+      button:nth-child(2) {
+        width: 10%;
+        background: #ffffff;
+        border: solid red 1px;
+      }
     }
   }
 

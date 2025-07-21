@@ -23,21 +23,59 @@
       <!-- <ng-content></ng-content> -->
       <form id="formulario">
 
-        <div class="form-input coluna10">
-          <label>Nome do Sistema <sup>*</sup></label>
-          <input type="text" placeholder="Informe o Nome do Sistema" />
+        <div class="row">
+
+          <div class="form-input">
+            <label>Nome do Sistema <sup></sup></label>
+            <input type="text" placeholder="Informe o Nome do Sistema" />
+          </div>
+
+          <div class="form-input">
+            <label>Descrição <sup></sup></label>
+            <input type="text" placeholder="Informe uma Descrição" />
+          </div>
+
         </div>
 
-        <div class="form-input coluna90">
-          <label>Descrição <sup>*</sup></label>
-          <input type="text" placeholder="Informe uma Descrição" />
+        <div class="row">
+
+          <div class="form-input">
+            <label>Identificador <sup></sup></label>
+            <input type="text" placeholder="Nome de Usuário, E-mail ou Telefone" />
+          </div>
+
+          <div class="form-input">
+            <label>Senha <sup></sup></label>
+            <input type="password" placeholder="* * * * * * * * * *" />
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-input">
+            <label>Link <sup></sup></label>
+            <input type="text" placeholder="http://www..." />
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="form-input">
+            <label>Observação <sup></sup></label>
+            <textarea maxlength="255"></textarea>
+          </div>
+
         </div>
 
       </form>
     </div>
     <div class="modal-footer">
-      <!-- Exemplo de botão -->
-      <button (click)="fecharModal()">Fechar</button>
+      <div class="button">
+        <button>Criar</button>
+        <button (click)="fecharModal()">Cancelar</button>
+      </div>
     </div>
   </div>
 </section>
