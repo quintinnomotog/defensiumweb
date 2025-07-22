@@ -19,20 +19,21 @@
     <div class="modal-header">
       <p>Cadastrar Nova Credencial</p>
     </div>
-    <div class="modal-content">
-      <!-- <ng-content></ng-content> -->
-      <form id="formulario">
+
+    <form id="formulario" autocomplete="off" [formGroup]="credencialFormGroup" (ngSubmit)="cadastrarCredencial()">
+      <div class="modal-content">
+        <!-- <ng-content></ng-content> -->
 
         <div class="row">
 
           <div class="form-input">
             <label>Nome do Sistema <sup></sup></label>
-            <input type="text" placeholder="Informe o Nome do Sistema" />
+            <input type="text" formControlName="pessoaCodigo" placeholder="Informe o Nome do Sistema" />
           </div>
 
           <div class="form-input">
             <label>Descrição <sup></sup></label>
-            <input type="text" placeholder="Informe uma Descrição" />
+            <input type="text" formControlName="descricao" placeholder="Informe uma Descrição" />
           </div>
 
         </div>
@@ -41,12 +42,12 @@
 
           <div class="form-input">
             <label>Identificador <sup></sup></label>
-            <input type="text" placeholder="Nome de Usuário, E-mail ou Telefone" />
+            <input type="text" formControlName="identificador" placeholder="Nome de Usuário, E-mail ou Telefone" />
           </div>
 
           <div class="form-input">
             <label>Senha <sup></sup></label>
-            <input type="password" placeholder="* * * * * * * * * *" />
+            <input type="password" formControlName="senha" placeholder="* * * * * * * * * *" />
           </div>
 
         </div>
@@ -55,7 +56,7 @@
 
           <div class="form-input">
             <label>Link <sup></sup></label>
-            <input type="text" placeholder="http://www..." />
+            <input type="text" formControlName="link" placeholder="http://www..." />
           </div>
 
         </div>
@@ -64,18 +65,18 @@
 
           <div class="form-input">
             <label>Observação <sup></sup></label>
-            <textarea maxlength="255"></textarea>
+            <textarea maxlength="255" formControlName="observacao"></textarea>
           </div>
 
         </div>
 
-      </form>
-    </div>
-    <div class="modal-footer">
-      <div class="button">
-        <button>Criar</button>
-        <button (click)="fecharModal()">Cancelar</button>
       </div>
-    </div>
+      <div class="modal-footer">
+        <div class="button">
+          <button type="submit">Cadastrar</button>
+          <button (click)="fecharModal()">Cancelar</button>
+        </div>
+      </div>
+    </form>
   </div>
 </section>
