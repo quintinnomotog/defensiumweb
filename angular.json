@@ -35,7 +35,7 @@
           },
           "configurations": {
             "production": {
-			  "baseHref": "/defensiumweb/",
+			  "baseHref": "dist/defensiumweb",
               "budgets": [
                 {
                   "type": "initial",
