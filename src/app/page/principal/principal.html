@@ -1,82 +1,91 @@
 <section id="area-texto">
 
-  <div class="decricao">
-    <p>Credenciais</p>
-  </div>
+	<div class="decricao">
+		<p>Credenciais</p>
+	</div>
 
-  <div class="botoes">
-    <button (click)="apresentarModal()">Adicionar Credencial</button>
-  </div>
+	<div class="botoes">
+		<button (click)="apresentarModal()">Adicionar Credencial</button>
+	</div>
 
 </section>
 
-<!-- backdrop -->
 <div *ngIf="isApresentarModal" class="backdrop"></div>
 
-<!-- modal -->
 <section *ngIf="isApresentarModal" id="modal-cadastrar-credencial">
-  <div class="modal">
-    <div class="modal-header">
-      <p>Cadastrar Nova Credencial</p>
-    </div>
+	<div class="modal">
+		<div class="modal-header">
+			<p>Cadastrar Nova Credencial</p>
+		</div>
 
-    <form id="formulario" autocomplete="off" [formGroup]="credencialFormGroup" (ngSubmit)="cadastrarCredencial()">
-      <div class="modal-content">
-        <!-- <ng-content></ng-content> -->
+		<form id="formulario" autocomplete="off" [formGroup]="credencialFormGroup" (ngSubmit)="cadastrarCredencial()">
+			<div class="modal-content">
 
-        <div class="row">
+				<div class="row">
 
-          <div class="form-input">
-            <label>Nome do Sistema <sup></sup></label>
-            <input type="text" formControlName="pessoaCodigo" placeholder="Informe o Nome do Sistema" />
-          </div>
+					<div class="form-input">
+						<label>Nome do Sistema <sup></sup></label>
+						<input type="text" formControlName="pessoaNome" placeholder="Informe o Nome do Sistema"
+							(click)="abrirDropdown()" readonly />
+						<div *ngIf="isApresentarDropdown" class="dropdown-pesquisar">
+							<input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="termoPesquisa"
+								(input)="pesquisarPessoa()" />
+							<ul>
+								<li *ngFor="let pessoa of pessoaPesquisarArray" (click)="selecionarPessoa(pessoa)">
+									<a>{{ pessoa.nome }}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-          <div class="form-input">
-            <label>Descrição <sup></sup></label>
-            <input type="text" formControlName="descricao" placeholder="Informe uma Descrição" />
-          </div>
+					<div class="form-input">
+						<label>Descrição <sup></sup></label>
+						<input type="text" formControlName="descricao" placeholder="Informe uma Descrição" />
+					</div>
 
-        </div>
+				</div>
 
-        <div class="row">
+				<div class="row">
 
-          <div class="form-input">
-            <label>Identificador <sup></sup></label>
-            <input type="text" formControlName="identificador" placeholder="Nome de Usuário, E-mail ou Telefone" />
-          </div>
+					<div class="form-input">
+						<label>Identificador <sup></sup></label>
+						<input type="text" formControlName="identificador"
+							placeholder="Nome de Usuário, E-mail ou Telefone" />
+					</div>
 
-          <div class="form-input">
-            <label>Senha <sup></sup></label>
-            <input type="password" formControlName="senha" placeholder="* * * * * * * * * *" />
-          </div>
+					<div class="form-input">
+						<label>Senha <sup></sup></label>
+						<input type="password" formControlName="senha" placeholder="* * * * * * * * * *" />
+					</div>
 
-        </div>
+				</div>
 
-        <div class="row">
+				<div class="row">
 
-          <div class="form-input">
-            <label>Link <sup></sup></label>
-            <input type="text" formControlName="link" placeholder="http://www..." />
-          </div>
+					<div class="form-input">
+						<label>Link <sup></sup></label>
+						<input type="text" formControlName="link" placeholder="http://www..." />
+					</div>
 
-        </div>
+				</div>
 
-        <div class="row">
+				<div class="row">
 
-          <div class="form-input">
-            <label>Observação <sup></sup></label>
-            <textarea maxlength="255" formControlName="observacao"></textarea>
-          </div>
+					<div class="form-input">
+						<label>Observação <sup></sup></label>
+						<textarea maxlength="255" formControlName="observacao"></textarea>
+					</div>
 
-        </div>
+				</div>
 
-      </div>
-      <div class="modal-footer">
-        <div class="button">
-          <button type="submit">Cadastrar</button>
-          <button (click)="fecharModal()">Cancelar</button>
-        </div>
-      </div>
-    </form>
-  </div>
+			</div>
+			<div class="modal-footer">
+				<div class="button">
+					<button type="submit">Cadastrar</button>
+					<button (click)="fecharModal()">Cancelar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
 </section>
