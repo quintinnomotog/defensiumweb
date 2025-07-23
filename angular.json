@@ -36,6 +36,7 @@
           "configurations": {
             "production": {
 			  "baseHref": "dist/defensiumweb",
+			  "browser": "",
               "budgets": [
                 {
                   "type": "initial",
