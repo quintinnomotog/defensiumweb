@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
-	FormControl,
-	FormGroup,
-	FormsModule,
-	ReactiveFormsModule,
-	Validators,
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
+import { PessoaModel } from '../../model/pessoa-model';
+import { PessoaService } from '../../service/pessoa-service';
 
 @Component({
 	selector: 'app-principal',
@@ -22,27 +24,20 @@ export class Principal implements OnInit {
 
 	public isApresentarDropdown: boolean = false;
 
-	public pessoaArray: Array<any> = [
-		{ codigo: 1, nome: 'Google' },
-		{ codigo: 2, nome: 'Amazon' },
-		{ codigo: 3, nome: 'Apple' },
-		{ codigo: 4, nome: 'Meta (Facebook)' },
-		{ codigo: 5, nome: 'Microsoft' },
-		{ codigo: 6, nome: 'Netflix' },
-		{ codigo: 7, nome: 'Tesla' },
-		{ codigo: 8, nome: 'Nvidia' },
-		{ codigo: 9, nome: 'OpenAI' }
-	];
+	public pessoaArray: Array<any> = [];
 
 	public pessoaPesquisarArray: Array<any> = [];
 
 	public termoPesquisa: string = '';
+
+  private readonly pessoaService = inject(PessoaService);
 
 	constructor() { }
 
 	ngOnInit() {
 		this.configurarFormulario();
 		this.pessoaPesquisarArray = [...this.pessoaArray];
+    this.carregarDadosPessoa();
 	}
 
 	public apresentarModal() {
@@ -102,8 +97,16 @@ export class Principal implements OnInit {
 		}
 	}
 
-	public carregarDadosPessoa(): any[] {
-		return this.pessoaArray;
+	public carregarDadosPessoa() {
+		this.pessoaService.findAll().subscribe({
+      next: (pessoaArray: PessoaModel[]) => {
+        this.pessoaArray = pessoaArray.filter( pessoa => pessoa.code !== 1);
+        this.pessoaPesquisarArray = [...this.pessoaArray];
+      },
+      error: (error: any) => {
+        console.error('[PessoaService -> carregarDadosPessoa()] Falha ao carregar dados!', error);
+      }
+    });
 	}
 
 	public pesquisarPessoa() {
