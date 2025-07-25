@@ -9,7 +9,7 @@ import { PessoaModel } from '../model/pessoa-model';
 })
 export class PessoaService {
 
-  private readonly URL: string = "http://localhost:8765/defensium/pessoa";
+  private readonly URL: string = "http://192.168.1.13:8765/defensium/pessoa";
 
   private readonly httpClient = inject(HttpClient);
 
