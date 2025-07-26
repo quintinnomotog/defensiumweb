@@ -1,1 +1,142 @@
-<p>credencial works!</p>
+<section id="card">
+
+  <div class="card-header">
+
+    <input type="text" placeholder="Pesquisar..." class="search-input" />
+
+    <select class="filter-select">
+      <option value="">Todos</option>
+      <option *ngFor="let option of [].constructor" [value]="option">{{ option }}</option>
+    </select>
+
+  </div>
+
+  <div class="card-content">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Conta</th>
+          <th>Descrição</th>
+          <th>Identificador</th>
+          <th>Vencimento</th>
+          <th style="text-align: center;">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Google</td>
+          <td>Conta Google</td>
+          <td>email&#64;gmail.com</td>
+          <td>26/10/2025</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Microsoft</td>
+          <td>Conta Microsoft</td>
+          <td>email&#64;hotmail.com</td>
+          <td>14/12/2025</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>Apple ID</td>
+          <td>usuario&#64;icloud.com</td>
+          <td>03/11/2025</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Amazon</td>
+          <td>Conta Amazon</td>
+          <td>cliente&#64;amazon.com</td>
+          <td>08/09/2025</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Meta</td>
+          <td>Conta Facebook</td>
+          <td>perfil&#64;facebook.com</td>
+          <td>17/01/2026</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Netflix</td>
+          <td>Conta Netflix</td>
+          <td>usuario&#64;netflix.com</td>
+          <td>02/08/2025</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Adobe</td>
+          <td>Adobe Creative Cloud</td>
+          <td>design&#64;adobe.com</td>
+          <td>19/03/2026</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Spotify</td>
+          <td>Conta Spotify</td>
+          <td>music&#64;spotify.com</td>
+          <td>22/11/2025</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Zoom</td>
+          <td>Conta Zoom</td>
+          <td>video&#64;zoom.us</td>
+          <td>30/06/2026</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Dropbox</td>
+          <td>Conta Dropbox</td>
+          <td>cloud&#64;dropbox.com</td>
+          <td>11/10/2025</td>
+          <td style="text-align: center;">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+  <div class="card-footer">
+    <div class="pagination">
+      <button class="page-btn" disabled>Anterior</button>
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">Próximo</button>
+    </div>
+
+  </div>
+</section>
