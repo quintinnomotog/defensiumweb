@@ -7,9 +7,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { PessoaModel } from '../../model/pessoa-model';
 import { PessoaService } from '../../service/pessoa-service';
 import { CredencialModel } from './../../model/credencial-model';
+import { PessoaModel } from './../../model/pessoa-model';
 import { CredencialService } from './../../service/credencial-service';
 
 @Component({
@@ -19,6 +19,7 @@ import { CredencialService } from './../../service/credencial-service';
   styleUrl: './principal.scss',
 })
 export class Principal implements OnInit {
+
   public credencialFormGroup!: FormGroup;
 
   public isApresentarModal: boolean = false;
@@ -56,28 +57,30 @@ export class Principal implements OnInit {
 
   private configurarFormulario() {
     this.credencialFormGroup = new FormGroup({
-      pessoaCodigo: new FormControl('', [Validators.required]),
-      pessoaNome: new FormControl('', [Validators.required]),
-      descricao: new FormControl('', [
+      pessoaCodigo: new FormControl(2, [Validators.required]),
+      pessoaNome: new FormControl("", [Validators.required]),
+      categoriaCredencialCode: new FormControl(2, [Validators.required]),
+      descricao: new FormControl("", [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(100),
       ]),
-      identificador: new FormControl('', [
+      identificador: new FormControl("", [
         Validators.required,
+        Validators.email,
         Validators.minLength(3),
         Validators.maxLength(60),
       ]),
-      senha: new FormControl('', [
+      senha: new FormControl("", [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(50),
       ]),
-      link: new FormControl('', [
+      link: new FormControl("", [
         Validators.minLength(3),
         Validators.maxLength(255),
       ]),
-      observacao: new FormControl('', [
+      observacao: new FormControl("", [
         Validators.minLength(3),
         Validators.maxLength(255),
       ]),
@@ -85,8 +88,7 @@ export class Principal implements OnInit {
   }
 
   public cadastrarCredencial() {
-    const credencialModel: CredencialModel = this.credencialFormGroup.value;
-    debugger;
+    const credencialModel: CredencialModel = this.configurarCredencialModel();
     this.credencialService.create(credencialModel).subscribe({
       next: (credencialModel: CredencialModel) => {
         console.log("[PessoaService -> cadastrarCredencial()] Credencial cadastrada com sucesso!", credencialModel);
@@ -96,7 +98,26 @@ export class Principal implements OnInit {
         console.error('[PessoaService -> cadastrarCredencial()] Falha ao cadastrar credencial!', error);
       },
     });
-    // this.credencialFormGroup.reset();
+    this.credencialFormGroup.reset();
+  }
+
+  private configurarCredencialModel(): any {
+    const credencialModel: CredencialModel = {
+      categoriaCredencial: {
+        code: this.credencialFormGroup.value.categoriaCredencialCode,
+      },
+      pessoa: {
+        code: this.credencialFormGroup.value.pessoaCodigo,
+        nome: this.credencialFormGroup.value.pessoaNome,
+      },
+      descricao: this.credencialFormGroup.value.descricao,
+      identificador: this.credencialFormGroup.value.identificador,
+      senha: this.credencialFormGroup.value.senha,
+      link: this.credencialFormGroup.value.link,
+      observacao: this.credencialFormGroup.value.observacao,
+      isAtivo: true,
+    };
+    return credencialModel;
   }
 
   public abrirDropdown() {

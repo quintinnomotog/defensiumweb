@@ -8,7 +8,7 @@ import { CredencialModel } from '../model/credencial-model';
 })
 export class CredencialService {
 
-  private readonly URL: string = "http://192.168.1.13:8765/defensium/credencial";
+  private readonly URL: string = "http://localhost:8080/defensium/credencial";
 
   private readonly httpClient = inject(HttpClient);
 

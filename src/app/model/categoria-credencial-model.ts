@@ -1,7 +1,7 @@
 export interface CategoriaCredencialModel {
 	code: number;
-	codePublic: string;
-	descricao: string;
+	codePublic?: string;
+	descricao?: string;
 	nomeIcone?: string;
 	corIcone?: string;
 	corFundo?: string;
