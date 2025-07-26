@@ -2,17 +2,18 @@
 
   <div class="item-esquerda">
     <div class="logo">
-      <i class='bx bxs-castle' ></i>
+      <i class='bx bxs-castle'></i>
       Defensium
     </div>
   </div>
 
   <div class="item-centro">
     <div class="menu">
-      <a (click)="redirecionarTelaPrincipal()" class="active">Principal</a>
-      <a (click)="redirecionarTelaCredencial()">Credenciais</a>
-      <a (click)="redirecionarTelaConfiguracao()">Configurações</a>
+      <a routerLink="/principal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Principal</a>
+      <a routerLink="/credencial" routerLinkActive="active">Credenciais</a>
+      <a routerLink="/configuracao" routerLinkActive="active">Configurações</a>
     </div>
+
   </div>
 
   <div class="item-direita">
@@ -22,14 +23,14 @@
     </div>
     <div class="user">
       <div class="imagem">
-        <img src="https://akbarputranft.vercel.app/assets/profile-1.png" alt="Usuário"/>
+        <img src="https://akbarputranft.vercel.app/assets/profile-1.png" alt="Usuário" />
       </div>
       <div class="informacao">
         <p>José Quintinno</p>
         <b>Administrador</b>
       </div>
       <div class="icone-abrir">
-        <i class='bx bx-chevron-down' ></i>
+        <i class='bx bx-chevron-down'></i>
       </div>
     </div>
   </div>
