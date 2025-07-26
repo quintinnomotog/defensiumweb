@@ -4,8 +4,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem 1rem 1rem 0.4rem;
+  padding: 0.6rem 1rem 1rem 0.6rem;
   border-bottom: solid 1px rgb(231, 231, 231);
+  box-shadow: 0px 0px 10px rgba(1, 32, 95, 0.5);
 }
 
 nav .item-esquerda .logo {
