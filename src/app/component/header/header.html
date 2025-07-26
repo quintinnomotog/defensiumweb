@@ -9,9 +9,9 @@
 
   <div class="item-centro">
     <div class="menu">
-      <a class="active">Principal</a>
-      <a>Credenciais</a>
-      <a>Configurações</a>
+      <a (click)="redirecionarTelaPrincipal()" class="active">Principal</a>
+      <a (click)="redirecionarTelaCredencial()">Credenciais</a>
+      <a (click)="redirecionarTelaConfiguracao()">Configurações</a>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
     </div>
     <div class="user">
       <div class="imagem">
-        <img src="/imagem/profile.png" alt="Usuário"/>
+        <img src="https://akbarputranft.vercel.app/assets/profile-1.png" alt="Usuário"/>
       </div>
       <div class="informacao">
         <p>José Quintinno</p>
