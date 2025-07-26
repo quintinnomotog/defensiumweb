@@ -1,6 +1,6 @@
-ng serve &
+ng serve --no-open &
 
-wait 8
+wait 10
 
 chromium --app=http://127.0.0.1:4200
 

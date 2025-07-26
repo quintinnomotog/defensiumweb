@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/defensiumweb",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -35,8 +36,7 @@
           },
           "configurations": {
             "production": {
-			  "baseHref": "dist/defensiumweb",
-			  "browser": "",
+              "baseHref": "/defensiumweb/",
               "budgets": [
                 {
                   "type": "initial",
@@ -93,11 +93,14 @@
               "src/styles.scss"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
   },
   "cli": {
-    "analytics": "64ff902d-5447-450f-b33f-b57435504a69"
+    "analytics": "fbc00820-c7fb-4d5d-8de3-cebddaa8feb5"
   }
 }
