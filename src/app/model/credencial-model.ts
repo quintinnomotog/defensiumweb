@@ -1,9 +1,11 @@
+import { CategoriaCredencialModel } from './categoria-credencial-model';
 import { PessoaModel } from './pessoa-model';
 
 export interface CredencialModel {
   code: number;
   codePublic: string;
-  PessoaModel: PessoaModel;
+  categoriaCredencialModel: CategoriaCredencialModel;
+  pessoaModel: PessoaModel;
   descricao: string;
   identificador: string;
   senha: string;
