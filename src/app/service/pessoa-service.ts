@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { routes } from './../app.routes';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PessoaModel } from '../model/pessoa-model';
