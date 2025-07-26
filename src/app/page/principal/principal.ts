@@ -124,7 +124,7 @@ export class Principal implements OnInit {
 
 	public selecionarPessoa(pessoa: any) {
 		this.credencialFormGroup.patchValue({
-			pessoaCodigo: pessoa.codigo,
+			pessoaCodigo: pessoa.code,
 			pessoaNome: pessoa.nome,
 		});
 		this.isApresentarDropdown = false;
